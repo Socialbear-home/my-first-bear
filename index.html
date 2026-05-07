@@ -3,97 +3,302 @@
 
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Instagram紹介</title>
 
+<!-- 丸いフォント -->
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700&display=swap"
+rel="stylesheet">
+
 <style>
 
+/* 全体 */
+
 body{
+
   margin:0;
-  background:linear-gradient(#f6f0e9,#f7f5f2);
-  font-family:sans-serif;
+
+  background:
+  linear-gradient(
+  #f7f1ea,
+  #f5f3ef);
+
+  font-family:
+  'Zen Maru Gothic',
+  sans-serif;
+
+  color:#9b857d;
+
   text-align:center;
-  color:#8f7f78;
+
+  overflow-x:hidden;
+
 }
 
-/* 上余白 */
-.top{
-  padding-top:50px;
+/* 余白 */
+
+.container{
+
+  padding:
+  50px 25px 80px;
+
 }
 
-/* キャラクター画像 */
+/* キャラ */
+
 .character{
+
   width:220px;
+
+  margin-top:20px;
+
 }
 
 /* タイトル */
+
 .title{
-  font-size:60px;
-  font-weight:bold;
-  margin-top:30px;
+
+  font-size:58px;
+
+  font-weight:700;
+
   line-height:1.2;
+
+  margin-top:20px;
+
 }
 
-/* 色 */
 .red{
-  color:#ef6a5b;
+  color:#ef7366;
 }
 
 .green{
-  color:#63b96d;
+  color:#69c06e;
 }
 
 /* 英語 */
+
 .sub{
+
+  margin-top:18px;
+
   letter-spacing:5px;
-  margin-top:20px;
+
   color:#b9aaa2;
+
+  font-size:18px;
+
 }
 
-/* 説明文 */
-.text{
-  margin:60px 30px;
-  font-size:24px;
-  line-height:1.8;
-}
+/* 線 */
 
-/* インスタボタン */
-.insta-box{
+.line{
 
   width:85%;
+
+  height:1px;
+
+  background:#d8ccc5;
+
   margin:50px auto;
+
+  position:relative;
+
+}
+
+.line::after{
+
+  content:"";
+
+  width:14px;
+
+  height:14px;
+
+  background:#d8ccc5;
+
+  border-radius:50%;
+
+  position:absolute;
+
+  left:50%;
+
+  top:50%;
+
+  transform:
+  translate(-50%,-50%);
+
+}
+
+/* 説明 */
+
+.text{
+
+  font-size:18px;
+
+  line-height:2;
+
+  margin-top:20px;
+
+}
+
+/* インスタ見出し */
+
+.insta-title{
+
+  font-size:22px;
+
+  font-weight:bold;
+
+  margin-top:70px;
+
+}
+
+/* ボックス */
+
+.insta-box{
+
+  width:88%;
+
+  margin:35px auto;
 
   background:white;
 
-  border-radius:30px;
+  border-radius:35px;
 
-  padding:30px;
+  padding:30px 20px;
 
-  box-shadow:0 5px 20px rgba(0,0,0,0.08);
+  box-shadow:
+  0 10px 30px
+  rgba(0,0,0,0.06);
+
+  border:
+  2px solid #f0d1d1;
 
 }
 
 /* ロゴ */
+
 .insta-logo{
-  width:100px;
+
+  width:90px;
+
 }
 
-/* ボタンリンク */
-a{
-  text-decoration:none;
-  color:inherit;
-}
+/* ID */
 
 .account{
-  font-size:40px;
-  font-weight:bold;
+
   margin-top:20px;
+
+  font-size:32px;
+
+  font-weight:bold;
+
 }
 
+/* 小文字 */
+
 .small{
+
   margin-top:10px;
+
+  font-size:16px;
+
+}
+
+/* 下文字 */
+
+.bottom{
+
+  margin-top:70px;
+
   font-size:20px;
+
+}
+
+/* 矢印 */
+
+.arrow{
+
+  margin-top:20px;
+
+  font-size:50px;
+
+  color:#6bc170;
+
+}
+
+/* リンク */
+
+a{
+
+  text-decoration:none;
+
+  color:inherit;
+
+}
+
+/* ================= */
+/* フワッと表示 */
+/* ================= */
+
+.fade{
+
+  opacity:0;
+
+  transform:
+  translateY(30px);
+
+  animation:
+  fadeUp 1s ease forwards;
+
+}
+
+/* 遅延 */
+
+.delay1{
+  animation-delay:0.3s;
+}
+
+.delay2{
+  animation-delay:0.6s;
+}
+
+.delay3{
+  animation-delay:0.9s;
+}
+
+.delay4{
+  animation-delay:1.2s;
+}
+
+.delay5{
+  animation-delay:1.5s;
+}
+
+/* アニメ */
+
+@keyframes fadeUp{
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+  }
+
 }
 
 </style>
@@ -101,50 +306,81 @@ a{
 
 <body>
 
-<div class="top">
+<div class="container">
 
-  <!-- キャラ画像 -->
-  <img class="character" src="IMG_9852.PNG">
-  <img class="fade" src="IMG_9852.PNG" width="300">
+  <!-- キャラ -->
+  <img class="character fade"
+  src="IMG_9852.PNG">
 
   <!-- タイトル -->
-  <div class="title">
-    <span class="green">ようこそ！</span>
+  <div class="title fade delay1">
+
+    <span class="red">ようこそ！</span>
+
 
   </div>
 
   <!-- 英語 -->
-  <div class="sub">
-    SORCIAL BEAR HOME
+  <div class="sub fade delay2">
+    SOCIAL BEAR HOME
   </div>
+
+  <!-- 線 -->
+  <div class="line fade delay2"></div>
 
   <!-- 説明 -->
-  <div class="text">
-    スキャンありがとう！<br>
-    Instagramをぜひフォローしてね
+  <div class="text fade delay3">
+
+    Overwatchのプレイを
+    より快適に、より楽しく！<br>
+
+    自作の便利ツールを
+    公開しています。
+
+  </div>
+
+  <!-- インスタ -->
+  <div class="insta-title fade delay4">
+
+    インスタグラムはこちら
+
+  </div>
+
+  <!-- ボタン -->
+  <a href="https://instagram.com/あなたのID">
+
+    <div class="insta-box fade delay5">
+
+      <img class="insta-logo"
+
+      src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+
+      <div class="account">
+        @あなたのID
+      </div>
+
+      <div class="small">
+
+        最新情報やツール更新を発信中！
+
+      </div>
+
+    </div>
+
+  </a>
+
+  <!-- 下 -->
+  <div class="bottom fade delay5">
+
+    見に来てくれてありがとう！
+
+  </div>
+
+  <div class="arrow fade delay5">
+    ↓
   </div>
 
 </div>
-
-<!-- Instagramリンク -->
-<a href="https://.instagram.com/@konishi__brotherz">
-
-<div class="insta-box">
-
-  <img class="insta-logo"
-  src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
-
-  <div class="account">
-    @konishi__brotherz
-  </div>
-
-  <div class="small">
-    タップしてInstagramへ
-  </div>
-
-</div>
-
-</a>
 
 </body>
 </html>
